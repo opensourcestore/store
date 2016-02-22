@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <categories id="1" name="Телефоны"/>
+    <categories id="2" name="Планшеты"/>
+    <categories id="3" name="Ноутбуки"/>
+    <categories id="4" name="Фото"/>
+    <categories id="5" name="Быт. техника"/>
+</dataset>

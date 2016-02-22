@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Store app</title>
+</head>
+<body ng-app="store" ng-controller="LoginController" ng-init="init()">
+    <p>Test page for the application</p>
+    <div ng-view=""></div>
+
+<div th:include="/tpl/login"></div>
+<div th:include="/tpl/success"></div>
+<div th:include="/tpl/upload"></div>
+
+<script type="text/javascript" th:src="@{/resources/js/lib/angular.min.js}" />
+<script type="text/javascript" th:src="@{/resources/js/lib/angular-route.min.js}" />
+<script type="text/javascript" th:src="@{/resources/js/lib/jquery-2.2.0.min.js}" />
+
+<script type="text/javascript" th:src="@{/resources/js/application.js}" />
+
+<script type="text/javascript" th:src="@{/resources/js/controller/loginCtrl.js}" />
+<script type="text/javascript" th:src="@{/resources/js/controller/uploadregCtrl.js}" />
+
+<script type="text/javascript" th:src="@{/resources/js/service/tokenAuthInterceptor.js}" />
+<script type="text/javascript" th:src="@{/resources/js/service/tokenStorage.js}" />
+</body>
+</html>

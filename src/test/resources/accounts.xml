@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <accounts id="1" name="Типа Акк 01" amount="100.00"/>
+    <accounts id="2" name="Типа Акк 02" amount="122.00"/>
+    <accounts id="3" name="Типа Акк 03" amount="100.10"/>
+    <accounts id="4" name="Типа Акк 04" amount="100.01"/>
+    <accounts id="5" name="Типа Акк 05" amount="12.00"/>
+    <accounts id="6" name="Типа Акк 06" amount="1.00"/>
+    <accounts id="7" name="Типа Акк 07" amount="1000.50"/>
+    <accounts id="8" name="Типа Акк 08" amount="152.00"/>
+    <accounts id="9" name="Типа Акк 09" amount="100.32"/>
+    <accounts id="10" name="Типа Акк 10" amount="750.00"/>
+</dataset>

@@ -1,0 +1,11 @@
+<script type="text/ng-template" id="/upload.html">
+    <form ng-submit="upload()">
+        <div ng-repeat="fileinput in fileinputs">
+            <input type="file" name="file" />
+            <br />
+        </div>
+        <br />
+        <button type="button" formnovalidate="" ng-click="addFile()">Add file</button>
+        <input type="submit" value="Send" />
+    </form>
+</script>

@@ -1,0 +1,20 @@
+<script type="text/ng-template" id="/login.html">
+    <form ng-submit="login()">
+        <input type="text"
+               autocomplete="off"
+               required=""
+               ng-model="user.username"
+               maxlength="30"
+               ng-disabled="lock"
+                />
+        <br />
+        <input type="password"
+               required=""
+               ng-model="user.password"
+               maxlength="100"
+               ng-disabled="lock"
+                />
+        <br />
+        <input type="submit" value="Sign in" ng-disabled="lock"/>
+    </form>
+</script>

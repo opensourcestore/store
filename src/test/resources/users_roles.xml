@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <users_roles user_id="1" role="ADMIN"/>
+    <users_roles user_id="2" role="CONTENT_MANAGER"/>
+
+    <users_roles user_id="3" role="CONTENT_MANAGER"/>
+    <users_roles user_id="3" role="USER"/>
+
+    <users_roles user_id="4" role="SUPPORT"/>
+    <users_roles user_id="5" role="SUPPORT"/>
+    <users_roles user_id="6" role="USER"/>
+    <users_roles user_id="7" role="USER"/>
+    <users_roles user_id="8" role="USER"/>
+    <users_roles user_id="9" role="USER"/>
+    <users_roles user_id="10" role="USER"/>
+
+    <users_roles user_id="12" role="USER"/>
+    <users_roles user_id="12" role="ADMIN"/>
+    <users_roles user_id="12" role="CONTENT_MANAGER"/>
+    <users_roles user_id="12" role="SUPPORT"/>
+</dataset>

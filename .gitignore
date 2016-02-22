@@ -1,0 +1,6 @@
+*.log
+*.iml
+.idea/
+target/
+CATALINA_HOME_IS_UNDEFINED/
+*#
