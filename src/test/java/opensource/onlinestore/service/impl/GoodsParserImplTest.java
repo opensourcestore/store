@@ -29,14 +29,12 @@ import java.io.IOException;
 /**
  * Created by orbot on 04.02.16.
  */
-// TODO: 22.02.2016 НЕ РАБОТАЕТ!!!!!
 
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfigTest.class})
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, DbUnitTestExecutionListener.class})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@Ignore
 public class GoodsParserImplTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     private static final String REGISTRIES_DIR = "goodsregistries/";
@@ -114,7 +112,7 @@ public class GoodsParserImplTest extends AbstractTransactionalJUnit4SpringContex
         Assert.assertNotNull(files);
         for(File file : files) {
             String fileName = file.getName();
-            Assert.assertTrue(fileName.matches("\\d{2}-\\d{2}-\\d{4}\\(\\d{2}:\\d{2}\\)_archive_test\\d*.(xls|csv)"));
+            Assert.assertTrue(fileName.matches("\\d{2}-\\d{2}-\\d{4}\\(\\d{2}.\\d{2}\\)_archive_test\\d*.(xls|csv)"));
         }
     }
 
@@ -125,6 +123,6 @@ public class GoodsParserImplTest extends AbstractTransactionalJUnit4SpringContex
         File[] files = archiveDir.listFiles();
         Assert.assertNotNull(files);
         Assert.assertEquals(files.length, 1);
-        Assert.assertTrue(files[0].getName().matches("\\d{2}-\\d{2}-\\d{4}\\(\\d{2}:\\d{2}\\)_errors.xls"));
+        Assert.assertTrue(files[0].getName().matches("\\d{2}-\\d{2}-\\d{4}\\(\\d{2}.\\d{2}\\)_errors.xls"));
     }
 }
