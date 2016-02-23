@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 
 @Configuration
@@ -19,7 +18,14 @@ public class AppConfig {
     @Bean
     public PropertyPlaceholderConfigurer propertyConfigurer() {
         PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
-        configurer.setLocation(new ClassPathResource("application.properties"));
+
+        ClassPathResource local = new ClassPathResource("local.properties");
+        ClassPathResource application = new ClassPathResource("application.properties");
+        if (local.exists()) {
+            configurer.setLocations(application, local);
+        } else {
+            configurer.setLocation(application);
+        }
         return configurer;
     }
 

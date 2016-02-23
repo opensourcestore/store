@@ -18,7 +18,13 @@ public class AppConfigTest {
     @Bean
     public PropertyPlaceholderConfigurer propertyConfigurer() {
         PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
-        configurer.setLocation(new ClassPathResource("application.properties"));
+        ClassPathResource local = new ClassPathResource("local.properties");
+        ClassPathResource application = new ClassPathResource("application.properties");
+        if (local.exists()) {
+            configurer.setLocations(application, local);
+        } else {
+            configurer.setLocation(application);
+        }
         return configurer;
     }
 
