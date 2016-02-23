@@ -36,11 +36,11 @@ import java.util.stream.Collectors;
 public class GoodsParserImpl implements GoodsParser {
 
     private static final Logger LOG = LoggerFactory.getLogger(GoodsParserImpl.class);
-    @Value("${goods.registries.dir}")
-    private String registriesDir;
     private static final String ARCHIVE_DIR = "archive/";
     private static final String ERRORS_DIR = "errors/";
     private static final String DATE_FORMAT = "dd-MM-yyyy(HH:mm)";
+    @Value("${goods.registries.dir}")
+    private String registriesDir;
     private DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
 
     @Autowired
@@ -105,7 +105,7 @@ public class GoodsParserImpl implements GoodsParser {
         for (File file : files) {
             String absolutePath = file.getAbsolutePath();
             String filePath = absolutePath.substring(0, absolutePath.lastIndexOf(File.separator));
-            String newFileName = dateFormat.format(new Date()) + "_archive_" + file.getName();
+            String newFileName = dateFormat.format(new Date()).replace(':', '-') + "_archive_" + file.getName();
             String archiveFilePath = filePath + File.separator + ARCHIVE_DIR;
             new File(archiveFilePath).mkdirs();
             File archiveFile = new File(archiveFilePath + newFileName);
@@ -140,7 +140,7 @@ public class GoodsParserImpl implements GoodsParser {
                 newErrorCell.setCellValue(errorCell.toString());
             }
         }
-        String errorFileName = dateFormat.format(new Date()) + "_errors.xls";
+        String errorFileName = dateFormat.format(new Date()).replace(':', '.') + "_errors.xls";
         try {
             File registriesDirFile = new ClassPathResource(registriesDir).getFile();
             File errorDir = new File(registriesDirFile.getAbsolutePath() + File.separator + ERRORS_DIR);
@@ -148,6 +148,8 @@ public class GoodsParserImpl implements GoodsParser {
             FileOutputStream fileOut
                     = new FileOutputStream(errorDir.getAbsolutePath() + File.separator + errorFileName);
             workbook.write(fileOut);
+            fileOut.flush();
+            fileOut.close();
             errorGoodsStorage.clearStorage();
         } catch (IOException e) {
             LOG.error("Could not save error file {}", errorFileName, e);
