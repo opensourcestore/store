@@ -2,7 +2,6 @@
 *.iml
 .idea/
 target/
-application.properties
 .gitignore
 CATALINA_HOME_IS_UNDEFINED/
 *#
