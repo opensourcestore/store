@@ -1,3 +1,5 @@
+/src/main/resources/local.properties
+/CATALINA_HOME_IS_UNDEFINED
 *.log
 *.iml
 .idea/

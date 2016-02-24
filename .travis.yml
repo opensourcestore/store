@@ -1,0 +1,5 @@
+language: java
+before_script: mvn compile properties:read-project-properties flyway:migrate
+script: mvn clean package
+jdk:
+ - oraclejdk8
