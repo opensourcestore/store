@@ -83,7 +83,7 @@ public class GoodsParserImplTest extends AbstractTransactionalJUnit4SpringContex
         GoodsEntity goodsEntity3 = goodsRepository.findByArticle("Test-article-3");
         GoodsDTO goodsExpectedDTO1 = new GoodsDTO();
         goodsExpectedDTO1.setArticle("Test-article-1");
-        goodsExpectedDTO1.setCount(10L);
+        goodsExpectedDTO1.setCounts(10L);
         goodsExpectedDTO1.setName("Здоровая лопата");
         goodsExpectedDTO1.setPrice(3D);
         goodsExpectedDTO1.setProducer("Samsung");
@@ -93,7 +93,7 @@ public class GoodsParserImplTest extends AbstractTransactionalJUnit4SpringContex
 
         GoodsDTO goodsExpectedDTO2 = new GoodsDTO();
         goodsExpectedDTO2.setArticle("Test-article-2");
-        goodsExpectedDTO2.setCount(2L);
+        goodsExpectedDTO2.setCounts(2L);
         goodsExpectedDTO2.setName("Яблочко");
         goodsExpectedDTO2.setPrice(666D);
         goodsExpectedDTO2.setProducer("Apple");

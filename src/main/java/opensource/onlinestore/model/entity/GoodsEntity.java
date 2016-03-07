@@ -34,8 +34,8 @@ public class GoodsEntity extends BaseEntity {
     private String article;
 
     @NotNull
-    @Column(name = "count", nullable = false)
-    private Long count;
+    @Column(name = "counts", nullable = false)
+    private Long counts;
 
     @NotNull
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -82,12 +82,12 @@ public class GoodsEntity extends BaseEntity {
         this.article = article;
     }
 
-    public Long getCount() {
-        return count;
+    public Long getCounts() {
+        return counts;
     }
 
-    public void setCount(Long count) {
-        this.count = count;
+    public void setCounts(Long counts) {
+        this.counts = counts;
     }
 
     public CategoryEntity getCategory() {

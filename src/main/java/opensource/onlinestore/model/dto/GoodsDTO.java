@@ -6,7 +6,7 @@ public class GoodsDTO {
     private String article;
     private String name;
     private Double price;
-    private Long count;
+    private Long counts;
     private String categoryName;
     private String producer;
     private String errorDescription;
@@ -28,12 +28,12 @@ public class GoodsDTO {
         this.name = name;
     }
 
-    public Long getCount() {
-        return count;
+    public Long getCounts() {
+        return counts;
     }
 
-    public void setCount(Long count) {
-        this.count = count;
+    public void setCounts(Long counts) {
+        this.counts = counts;
     }
 
     public String getCategoryName() {

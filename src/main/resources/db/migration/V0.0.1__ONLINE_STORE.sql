@@ -51,7 +51,7 @@ CREATE TABLE goods (
   id bigint NOT NULL PRIMARY KEY DEFAULT nextval('store_sequence'),
   name CHARACTER VARYING (255) NOT NULL,
   article CHARACTER VARYING(255) NOT NULL,
-  count bigint NOT NULL,
+  counts bigint NOT NULL,
   category_id bigint NOT NULL REFERENCES categories (id),
   price double precision NOT NULL,
   producer CHARACTER VARYING (255) NOT NULL,

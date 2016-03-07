@@ -160,7 +160,7 @@ public class GoodsParserImpl implements GoodsParser {
         HSSFRow row = workSheet.createRow(rowNum);
         row.createCell(0).setCellValue(goodsDTO.getArticle());
         row.createCell(1).setCellValue(goodsDTO.getName());
-        row.createCell(2).setCellValue(goodsDTO.getCount());
+        row.createCell(2).setCellValue(goodsDTO.getCounts());
         row.createCell(3).setCellValue(goodsDTO.getPrice());
         row.createCell(4).setCellValue(goodsDTO.getProducer());
         row.createCell(5).setCellValue(goodsDTO.getCategoryName());

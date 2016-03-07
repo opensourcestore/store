@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -16,7 +15,6 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
 import java.util.Properties;
 
 @Profile("test")
@@ -43,7 +41,7 @@ public class JPAConfigTest {
     @Value("${hibernate.dialect}")
     private String dialect;
 
-    @Bean
+    /*@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driver);
@@ -51,16 +49,16 @@ public class JPAConfigTest {
         dataSource.setPassword(password);
         dataSource.setUrl(url);
         return dataSource;
+    }*/
+    @Bean
+    public EmbeddedDatabase dataSource() {
+        return new EmbeddedDatabaseBuilder().
+                setType(EmbeddedDatabaseType.HSQL)
+                .setName("store")
+                .addScript("dbTest/Init_DB_HSQL_0_1.sql")
+                .addScript("dbTest/Init_DB_HSQL_0_2.sql")
+                .build();
     }
-
-//    @Bean
-//    public EmbeddedDatabase dataSource() {
-//        return new EmbeddedDatabaseBuilder().
-//                setType(EmbeddedDatabaseType.H2)
-//                .addScript("db/migration/V0.0.1__ONLINE_STORE.sql")
-//                .addScript("db/migration/V0.0.2__ONLINE_STORE.sql")
-//                .build();
-//    }
 
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
