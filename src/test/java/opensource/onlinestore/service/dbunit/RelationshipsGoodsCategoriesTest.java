@@ -161,7 +161,7 @@ public class RelationshipsGoodsCategoriesTest extends AbstractTransactionalJUnit
 
     @Test
     @Rollback
-    @DatabaseSetup({"classpath:categories.xml", "classpath:goods.xml"})
+    /*@DatabaseSetup({"classpath:categories.xml", "classpath:goods.xml"})*/
     public void testDeleteGoods() {
         // given
         //1.1 create category
@@ -186,7 +186,7 @@ public class RelationshipsGoodsCategoriesTest extends AbstractTransactionalJUnit
 
     @Test(expected = ConstraintViolationException.class)
     @Rollback
-    @DatabaseSetup({"classpath:categories.xml", "classpath:goods.xml"})
+    /*@DatabaseSetup({"classpath:categories.xml", "classpath:goods.xml"})*/
     public void testShouldRaiseConstraintViolationException() {
         // given
         //1.1 create category

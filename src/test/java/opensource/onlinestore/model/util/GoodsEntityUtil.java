@@ -12,7 +12,7 @@ public class GoodsEntityUtil {
         entity.setId(1L);
         entity.setName("Nokia 3110");
         entity.setArticle("Телефон");
-        entity.setCount(1L);
+        entity.setCounts(1L);
         entity.setCategory(null);
         entity.setPrice(99.01);
         entity.setProducer("Китай");

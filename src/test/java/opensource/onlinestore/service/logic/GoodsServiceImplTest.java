@@ -129,7 +129,7 @@ public class GoodsServiceImplTest extends AbstractTransactionalJUnit4SpringConte
         GoodsEntity entity = new GoodsEntity();
         entity.setName("Nokia 3110");
         entity.setArticle("Телефон");
-        entity.setCount(1L);
+        entity.setCounts(1L);
         entity.setCategory(null);
         entity.setPrice(99.01);
         entity.setProducer("Китай");
@@ -143,7 +143,7 @@ public class GoodsServiceImplTest extends AbstractTransactionalJUnit4SpringConte
             GoodsEntity entity = new GoodsEntity();
             entity.setName("Nokia 3110_" + i);
             entity.setArticle("Телефон_" + i);
-            entity.setCount(1L);
+            entity.setCounts(1L);
             entity.setCategory(null);
             entity.setPrice(99.01 + i);
             entity.setProducer("Китай_" + i);

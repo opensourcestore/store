@@ -79,7 +79,7 @@ public class GoodsServiceImpl implements GoodsService {
                     errorGoodsStorage.addErrorGoods(goods);
                     return false;
                 }
-                retrievedGoods.setCount(goods.getCount() + retrievedGoods.getCount());
+                retrievedGoods.setCounts(goods.getCounts() + retrievedGoods.getCounts());
                 goodsRepository.save(retrievedGoods);
             } else {
                 success = success && addGoods(goods);

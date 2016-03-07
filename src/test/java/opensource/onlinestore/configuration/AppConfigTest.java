@@ -18,13 +18,15 @@ public class AppConfigTest {
     @Bean
     public PropertyPlaceholderConfigurer propertyConfigurer() {
         PropertyPlaceholderConfigurer configurer = new PropertyPlaceholderConfigurer();
-        ClassPathResource local = new ClassPathResource("local.properties");
-        ClassPathResource application = new ClassPathResource("application.properties");
+        ClassPathResource local = new ClassPathResource("hsqldb.properties");
+       /* ClassPathResource local = new ClassPathResource("local.properties");*/
+        configurer.setLocation(local);
+        /*ClassPathResource application = new ClassPathResource("application.properties");
         if (local.exists()) {
             configurer.setLocations(application, local);
         } else {
             configurer.setLocation(application);
-        }
+        }*/
         return configurer;
     }
 
